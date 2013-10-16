@@ -56,9 +56,6 @@ module IssuePatch
         days_index = 0
       end
 
-			dd = final_working_period.start_time + num_seconds_left
-			File.open('ddbug.txt','a') {|file| file.puts("#{Time.now} \t Due date for ##{self.id}: #{dd} \t SLA-secs #{priority.sla_priority.seconds}")}
-			
       update_column(:due_date, final_working_period.start_time + num_seconds_left)
     end
 
